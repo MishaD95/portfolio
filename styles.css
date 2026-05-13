@@ -1,0 +1,202 @@
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+/* ===== Загальні стилі (Етап 1) ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: hsl(210, 20%, 98%); /* Використання HSL */
+    padding-top: 80px; /* Відступ для фіксованого хедера (Етап 7) */
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ===== Хедер та навігація (Етап 4, 7) ===== */
+#main-header { /* Селектор ідентифікатора */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #2c3e50; /* HEX колір */
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.nav-menu ul { /* Комбінований селектор нащадка */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: 1.5rem;
+}
+
+.nav-link { /* Селектор класу */
+    text-decoration: none;
+    color: rgb(236, 240, 241); /* RGB колір */
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Псевдокласи (Етап 10) */
+.nav-link:link { color: #ecf0f1; }
+.nav-link:visited { color: #bdc3c7; }
+.nav-link:hover {
+    background-color: #3498db;
+    color: white;
+}
+.nav-link:active { background-color: #2980b9; }
+.nav-link:focus { outline: 2px solid #3498db; }
+
+/* ===== Головна секція (Етап 3, 9) ===== */
+section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    position: relative; /* Для абсолютного позиціонування всередині */
+}
+
+h2::after { /* Псевдоелемент (Етап 9) */
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #3498db;
+    margin-top: 0.5rem;
+    border-radius: 2px;
+}
+
+/* Приклад Relative + Absolute (Етап 7) */
+.profile-card {
+    position: relative;
+    display: inline-block;
+}
+
+.status-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #27ae60;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.7rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+/* ===== Таблиця (Етап 5) ===== */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Прибирання подвійних рамок */
+    margin: 1.5rem 0;
+    overflow: hidden; /* Етап 11 */
+    border-radius: 8px;
+}
+
+th, td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #34495e;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Зебра та Hover (Етап 5) */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: default;
+}
+
+/* ===== Форма (Етап 6) ===== */
+.contact-form fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+input[type="text"], /* Селектор атрибута */
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+.btn-submit {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* ===== Футер ===== */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #2c3e50;
+    color: #bdc3c7;
+    margin-top: 4rem;
+}
